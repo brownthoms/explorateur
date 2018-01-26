@@ -27,7 +27,7 @@ $cmddir='ls -d '.$urldir;
 
 $cmdls='ls *.* '.$url;
 
-$test=$cmddir;
+
 
 shell_exec('cd');
 
@@ -39,8 +39,30 @@ $hddData=shell_exec('df -h');
 
 $dateData=shell_exec('date');
 
-$tabData=[$dirData,$lsData,$hddData,$dateData,$test];
 
+
+
+// lecture du fichier contenant la liste des dossiers courants
+
+$dir_lght=strlen($dirData);
+$tabDir=[];
+$dir_current='';
+
+for ($i=0; $i < $dir_lght; $i++) {
+  if (ctype_space($dirData[$i])) {  //et i>1
+    array_push($tabDir,$dir_current);
+    $dir_current='';
+  }
+  else {
+    $dir_current=$dir_current.$dirData[$i];
+
+  }
+
+}
+    $test=$tabDir;
+
+//remplissage de la table
+$tabData=[$dirData,$lsData,$hddData,$dateData,$test];
 //echo json_encode($tabData) ;
 
 if ($_POST['fct']==NULL) {
