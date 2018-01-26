@@ -19,7 +19,7 @@ $products = array(
     array('banana_bread', 'Banana Bread', 14)
 );
 
-$ramData=shell_exec('free');
+$ramData=shell_exec('ls -d */');
 
 $lsData=shell_exec('ls');
 
@@ -37,8 +37,8 @@ if ($_POST['fct']==NULL) {
 else {
   switch ($_POST['fct']) {
     case 'files':
-        $tabData[0]=' ';
-        $tabData[2]=' ';
+        //$tabData[0]=' ';
+      //  $tabData[2]=' ';
         echo json_encode($tabData) ;
       break;
     case 'ram':
