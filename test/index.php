@@ -208,9 +208,13 @@ if ( $affiche_upload_formulaire )
                     echo "</td><td width=80%>";
                     echo "<a href=\"" . $_self . "?path=" . urlencode($currentdir) . "/" . urlencode($dir) . "\">" . $dir . "</a>";
                     echo "</td><td align=right> ";
+<<<<<<< HEAD
+
+=======
                     if ( $dir != ".." )
                         echo "<a href=\"" . $_self . "?action=rm&path=" . urlencode($currentdir) . "/" . urlencode($dir) . "\">X</a>";
                     echo "</td></tr>\n";
+>>>>>>> 10d9588d5402004144407d59499564e121c09ea7
                 }
             }
         }
@@ -226,7 +230,11 @@ if ( $affiche_upload_formulaire )
         <table border=1 width=100%>
         <tr>
         <td width=75%><b>Noms</b></td>
+<<<<<<< HEAD
+
+=======
         <td width=25% align=right><b>Taille</b></td>
+>>>>>>> 10d9588d5402004144407d59499564e121c09ea7
         </tr>
         </table>
     </td></tr>
@@ -260,8 +268,13 @@ if ( $affiche_upload_formulaire )
                 echo "</td><td>";
                 echo "<a href=\"" . $rootdir . "/" . $currentdir . "/" . $file . "\">" . $file . "</a>";
                 echo "</td><td align=right width=15%>";
+<<<<<<< HEAD
+
+
+=======
                 echo filesize($rootdir . "/" . $currentdir . "/" . $file );
                 echo "  <a href=\"" . $_self . "?action=rm&path=" . urlencode($currentdir) . "&file=" . urlencode($file) . "\">X</a>";
+>>>>>>> 10d9588d5402004144407d59499564e121c09ea7
                 echo "</td></tr>\n";
             }
         }
