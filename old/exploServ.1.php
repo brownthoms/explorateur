@@ -19,16 +19,50 @@ $products = array(
     array('banana_bread', 'Banana Bread', 14)
 );
 
-$ramData=shell_exec('ls -d */');
+$url='/home/';
 
-$lsData=shell_exec('ls');
+$urldir=$url.'*/';
+
+$cmddir='ls -d '.$urldir;
+
+$cmdls='ls *.* '.$url;
+
+
+
+shell_exec('cd');
+
+$dirData=shell_exec($cmddir);//free');
+
+$lsData=shell_exec($cmdls);
 
 $hddData=shell_exec('df -h');
 
 $dateData=shell_exec('date');
 
-$tabData=[$ramData,$lsData,$hddData,$dateData];
 
+
+
+// lecture du fichier contenant la liste des dossiers courants
+
+$dir_lght=strlen($dirData);
+$tabDir=[];
+$dir_current='';
+
+for ($i=0; $i < $dir_lght; $i++) {
+  if (ctype_space($dirData[$i])) {  //et i>1
+    array_push($tabDir,$dir_current);
+    $dir_current='';
+  }
+  else {
+    $dir_current=$dir_current.$dirData[$i];
+
+  }
+
+}
+    $test=$tabDir;
+
+//remplissage de la table
+$tabData=[$dirData,$lsData,$hddData,$dateData,$test];
 //echo json_encode($tabData) ;
 
 if ($_POST['fct']==NULL) {
@@ -38,17 +72,17 @@ else {
   switch ($_POST['fct']) {
     case 'files':
         //$tabData[0]=' ';
-      //  $tabData[2]=' ';
+        //$tabData[2]=' ';
         echo json_encode($tabData) ;
       break;
     case 'ram':
-        $tabData[1]=' ';
-        $tabData[2]=' ';
+        //$tabData[1]=' ';
+        //$tabData[2]=' ';
         echo json_encode($tabData) ;
       break;
     case 'hdd':
-        $tabData[0]=' ';
-        $tabData[1]=' ';
+        //$tabData[0]=' ';
+        //$tabData[1]=' ';
         echo json_encode($tabData) ;
         break;
     default:
