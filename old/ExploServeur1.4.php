@@ -30,7 +30,7 @@
 
               $.ajax({
                 type: 'post',
-                url: 'exploServ.1.3.php',
+                url: 'exploServ.1.4.php',
                 data: {url:url},
                 success: function(response,status){
                   //alert(response);
