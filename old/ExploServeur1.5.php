@@ -30,7 +30,7 @@
 
               $.ajax({
                 type: 'post',
-                url: 'exploServ.1.4.php',
+                url: 'exploServ.1.5.php',
                 data: {url:url},
                 success: function(response,status){
                   //alert(response);
@@ -50,15 +50,20 @@
                     $link = "<a id=\"a"+vtab+"\" onclick=\"go(this.id)\">"+tabDir[vtab]+"</a>"
                       $("#div1").append($link);
                       $("#div1").append('<br>');
-                      console.log(tabDir[vtab]);
+                      //console.log(tabDir[vtab]);
                   }
 
 
                   $("#div2").empty();
                   $("#div3").empty();
                   //$("#divdate").empty();
-
+                  console.log(a[0]);
+                  console.log(a[2]);
                   $("#div2").append("<pre>"+a[1]+"</pre>");
+                  $link2 = "<a id=\"btbk\" onclick=\"go(this.id)\">"+a[0]+"</a>"
+                  $("#div1").append('<br>');
+                  $("#div1").append($link2);
+
                   //$("#div3").append("<pre>"+a[2]+"</pre>");
                   //$("#divdate").append(a[3]);
                 }
