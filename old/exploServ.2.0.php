@@ -1,7 +1,7 @@
 <?php
 
 if ($_POST['url']==null) {
-  $url='/home/';
+  $url='/';
 }
 
   $url=$_POST['url'];
@@ -28,10 +28,11 @@ $dateData=shell_exec('date');
 
 
 if ($url=='/') {
-  $urlback = dirname($url);
+  //$urlback = dirname($url);
+  $urlback = '/';
 }
 else {
-  $urlback = dirname($url).'/';
+  $urlback = dirname($url);//.'/';
 }
 
 
