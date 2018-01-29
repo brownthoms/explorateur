@@ -1,7 +1,7 @@
 <?php
 $tab=[
   "easy" => "wwwwwii",
-"whaa" => "2",
+  "whaa" => "2",
 ];
 
 $tab2=['easy','den','deh'];
@@ -18,8 +18,8 @@ $products = array(
     array('cheese_cake', 'Cheese Cake', 20),
     array('banana_bread', 'Banana Bread', 14)
 );
+$url='/';
 
-$url='/home/';
 
 $urldir=$url.'*/';
 
@@ -90,6 +90,12 @@ else {
       break;
   }
 }
+
+if ($url ) {
+  # code...
+}
+
+
 
 
 

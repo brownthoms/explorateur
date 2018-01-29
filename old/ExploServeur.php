@@ -30,17 +30,16 @@
                   for (var vtab in tabDir) {
                     //alert(vtab);
                       $("#div1").append(tabDir[vtab]);
+                      $("#div1").append('<a id="onclick" onclick="go(this.id)">');
                       $("#div1").append('<br>');
                       console.log(tabDir[vtab]);
                   }
 
 
                   $("#div2").empty();
-                  $("#div3").empty();
                   $("#divdate").empty();
-
                   $("#div2").append("<pre>"+a[1]+"</pre>");
-                  $("#div3").append("<pre>"+a[2]+"</pre>");
+
                   $("#divdate").append(a[3]);
                 }
               });
@@ -57,15 +56,14 @@
 
         <p>
 
-            <label for="list_fct">Infos?</label><br />
+            <!-- <label for="list_fct">Infos?</label><br /> -->
 
             <select name="list_fct" id="id_list_fct">
 
-                <option value="files">Files</option>
 
                 <option value="ram">RAM</option>
 
-                <option value="hdd">HDD</option>
+
 
             </select>
 
@@ -74,11 +72,11 @@
 
 
     </div>
-    <div class="col-12" id="divdate"></div>
-    <div class="col-3" id="div1"></div>
+
+    <a href="#" onclick="onclick()" id="onclick"><div class="col-3" id="div1"></div></a>
     <div class="col-3" id="div2" style="border: 2px green"></div>
-    <div class="col-3" id="div3"></div>
     <div class="col-3" id="div4"></div>
+
 
   </div>
 

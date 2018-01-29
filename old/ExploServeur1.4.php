@@ -9,6 +9,7 @@
 			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			  crossorigin="anonymous"></script>
 
+<<<<<<< HEAD
     <script type="text/javascript">
         function go(id){
 
@@ -68,6 +69,9 @@
       //  });
     }
     </script>
+=======
+    <script type="text/javascript" src="js/script.js"></script>
+>>>>>>> 725394f208b62f0d75aea29ee1c0fbddcb89c118
   </head>
   <body onload="go()">
 <div class="container-fluid">
