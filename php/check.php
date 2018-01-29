@@ -1,30 +1,24 @@
 <?php
 
-  //function fichier(){
-    $ramData=shell_exec('ls -d */');
+  function home() {
 
-    $lsData=shell_exec('ls /home/*/');
+    $home=shell_exec('ls ..');
+    echo "$home";
+  }
 
-    $hddData=shell_exec('df -h');
+  function suite() {
 
-    $dateData=shell_exec('date');
+    $home=shell_exec('ls /var/www/projets/explorateur');
+    echo "$home";
+  }
 
-    echo "$ramData<br>";
-    echo "<br>";
-    echo "$lsData<br>";
-    echo "<br>";
-    echo "$hddData<br>";
-    echo "<br>";
-    echo "$dateData<br>";
-  //}
-
-
-//
-//   if(isset($_POST['action']) && !empty($_POST['action'])) {
-//    $action = $_POST['action'];
-//    switch($action) {
-//        case 'choco': fichier();
-//    }
-//  }
+  if (isset($_POST['action'])) {
+    $action = $_POST['action'];
+    switch ($action) {
+      case '2' :  suite();
+      case '1' : home();
+      break;
+    }
+  }
 
  ?>

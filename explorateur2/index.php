@@ -15,10 +15,10 @@
 <div class="container-fluid">
   <div class="row">
 
-    <div class="col-3" id="div1"></div>
-    <div class="col-3" id="div2"></div>
-    <div class="col-3" id="div3"></div>
-    <div class="col-3" id="div4"></div>
+    <div class="col-6" id="div1"></div>
+    <div class="col-6" id="div2"></div>
+    <div class="col-3" id="back"></div>
+    <!-- <div class="col-3" id="div4"></div> -->
 
     <!--<a id="tp1" value="/home/" onClick="go(this.id)">/home/</a>-->
 
