@@ -1,7 +1,7 @@
 <?php
 
 if ($_POST['url']==null) {
-  $url='/';
+  $url='/home/';
 }
 
   $url=$_POST['url'];
@@ -17,7 +17,6 @@ $cmdls='ls \*.\* '.$url;
 
 
 
-shell_exec('cd');
 
 $dirData=shell_exec($cmddir);//free');
 
@@ -28,7 +27,7 @@ $hddData=shell_exec('df -h');
 $dateData=shell_exec('date');
 
 
-if ($url=='/home/') {
+if ($url=='/') {
   $urlback = dirname($url);
 }
 else {
@@ -70,12 +69,15 @@ if ($urlback=='') {
 
 $dir_lght=strlen($dirData);
 $tabDir=[];
+$tabShortDir=[];
 $dir_current='';
 
 for ($i=0; $i < $dir_lght; $i++) {
   if (ctype_space($dirData[$i])) {  //et i>1
     array_push($tabDir,$dir_current);
+    $dir_short=basename($dir_current);
     $dir_current='';
+    array_push($tabShortDir,$dir_short);
   }
   else {
     $dir_current=$dir_current.$dirData[$i];
@@ -85,8 +87,13 @@ for ($i=0; $i < $dir_lght; $i++) {
 }
 
 
+foreach ($variable as $key => $value) {
+  # code...
+}
+
+
 //remplissage de la table
-$tabData=[$urlback,$lsData,$url,$dateData,$tabDir];
+$tabData=[$urlback,$lsData,$url,$tabShortDir,$tabDir];
 //echo json_encode($tabData) ;
 
 echo json_encode($tabData) ;
