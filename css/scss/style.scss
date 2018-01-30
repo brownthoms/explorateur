@@ -20,7 +20,9 @@ $centre:center;
 
 
 .div1{
-    background-image:linear-gradient(to right, $div1gauche , $div1droite);
+    background-image:url(../img/bob.jpg);
+    background-size: cover;
+
     font-size: $taillepetit;
     border-style: solid;
     border-color: $bordure;
@@ -36,7 +38,8 @@ $centre:center;
 }}
 
 .div2{
-  background-image:linear-gradient(to right, $div2gauche, $div2droite);
+  background-image:url(../img/dory.jpg);
+  background-size: cover;
   border-style: solid;
   border-color: $bordure;
   border-top-right-radius: $radius;
@@ -53,7 +56,8 @@ a:hover{
 
 }
 .back1{
-  background-image:linear-gradient(to right, $div3gauche, $div3droite);
+  background-image:url(../img/soie.jpg);
+  background-size: cover;
   border-style: solid;
   border-color: $bordure;
   color: $textediv3;
