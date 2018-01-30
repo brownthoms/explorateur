@@ -1,7 +1,7 @@
 <?php
 $tab=[
   "easy" => "wwwwwii",
-"whaa" => "2",
+  "whaa" => "2",
 ];
 
 $tab2=['easy','den','deh'];
