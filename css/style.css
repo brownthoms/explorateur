@@ -1,5 +1,6 @@
 .div1 {
-  background-image: linear-gradient(to right, orange, yellow);
+  background-image: url(../img/bob.jpg);
+  background-size: cover;
   font-size: 15px;
   border-style: solid;
   border-color: black;
@@ -9,7 +10,8 @@
   .div1 {
     font-size: 30px; } }
 .div2 {
-  background-image: linear-gradient(to right, lightblue, blue);
+  background-image: url(../img/dory.jpg);
+  background-size: cover;
   border-style: solid;
   border-color: black;
   border-top-right-radius: 10px;
@@ -22,7 +24,8 @@ a:hover {
   cursor: pointer; }
 
 .back1 {
-  background-image: linear-gradient(to right, black, red);
+  background-image: url(../img/soie.jpg);
+  background-size: cover;
   border-style: solid;
   border-color: black;
   color: white;
