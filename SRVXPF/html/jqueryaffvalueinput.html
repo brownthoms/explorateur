@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="iso-8859-7">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    $("#btsv").click(function(){
+        alert("Value: " + $("#test0").val());
+      });
+
+    $("#btn1").click(function(){
+        alert("Text: " + $("#test").text());
+      });
+
+    $("#btn2").click(function(){
+        alert("HTML: " + $("#test").html());
+      });
+
+    $("#btn4").click(function(){
+          $("#test1").text("Hello world!");
+      });
+
+    $("#btn5").click(function(){
+          $("#test2").html("<b>Hello world!</b>");
+      });
+
+    $("#btn6").click(function(){
+          $("#test3").val("Dolly Duck");
+      });
+
+      $("#btn7").click(function(){
+          $("#test7").text(function(i, origText){
+              return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
+          });
+      });
+
+      $("#btn8").click(function(){
+          $("#test8").html(function(i, origText){
+              return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")";
+          });
+      });
+
+      $("button").click(function(){
+          $("#w3s").attr("href", "https://www.w3schools.com/jquery");
+      });
+
+      $("#button2").click(function(){
+          $("#w3s2").attr({
+              "href" : "https://www.w3schools.com/jquery",
+              "title" : "W3Schools jQuery Tutorial"
+          });
+      });
+
+      $("#button3").click(function(){
+          $("#w3s3").attr("href", function(i, origValue){
+              return origValue + "/jquery";
+          });
+      });
+
+      $("#btn9").click(function(){
+          $("p").append(" <b>Appended text</b>.");
+      });
+
+      $("#btn10").click(function(){
+          $("ol").append("<li>Appended item</li>");
+      });
+
+      $("#btn11").click(function(){
+          $("p").prepend("<b>Prepended text</b>. ");
+      });
+      $("#btn12").click(function(){
+          $("ol").prepend("<li>Prepended item</li>");
+      });
+
+      $("#btn21").click(function(){
+          $("img").before("<b>Before</b>");
+      });
+
+      $("#btn22").click(function(){
+          $("img").after("<i>After</i>");
+      });
+
+      $("#bt17").click(function(){
+          $("#div1").remove();
+      });
+
+      $("#bt16").click(function(){
+          $("#div2").empty();
+      });
+
+      $("#bt15").click(function(){
+          $("p").remove(".test, .demo");
+      });
+
+      $("#bt23").click(function(){
+          $("h1, h2, p").addClass("blue");
+          $("div").addClass("important");
+      });
+
+      $("#bt24").click(function(){
+          $("#div11").addClass("important blue");
+      });
+
+      $("#bt25").click(function(){
+          $("h1, h2, p").removeClass("blue");
+      });
+
+      $("#bt26").click(function(){
+          $("h1, h2, p").toggleClass("blue");
+      });
+
+      $("#bt27").click(function(){
+          $("p").css("background-color", "yellow");
+      });
+
+      $("#bt28").click(function(){
+          $("p").css({"background-color": "yellow", "font-size": "200%"});
+      });
+
+      $("#bt29").click(function(){
+          var txt = "";
+          txt += "Width of div: " + $("#div31").width() + "</br>";
+          txt += "Height of div: " + $("#div31").height();
+          $("#div31").html(txt);
+      });
+
+      $("#30").click(function(){
+          var txt = "";
+          txt += "Document width/height: " + $(document).width();
+          txt += "x" + $(document).height() + "\n";
+          txt += "Window width/height: " + $(window).width();
+          txt += "x" + $(window).height();
+          alert(txt);
+      });
+      $("#bt32").click(function(){
+          var txt = "";
+          txt += "Width of div: " + $("#div32").width() + "</br>";
+          txt += "Height of div: " + $("#div32").height() + "</br>";
+          txt += "Outer width of div: " + $("#div32").outerWidth() + "</br>";
+          txt += "Outer height of div: " + $("#div32").outerHeight();
+          $("#div32").html(txt);
+      });
+});
+
+function appendText() {
+    var txt1 = "<p>htmlstyle.</p>";              // Create text with HTML
+    var txt2 = $("<p></p>").text("jquery.");  // Create text with jQuery
+    var txt3 = document.createElement("p");
+    txt3.innerHTML = "witDOM.";               // Create text with DOM
+    $("body").append(txt1, txt2, txt3);     // Append new elements
+}
+
+function afterText() {
+    var txt1 = "<b>I </b>";                   // Create element with HTML
+    var txt2 = $("<i></i>").text("love ");    // Create with jQuery
+    var txt3 = document.createElement("b");   // Create with DOM
+    txt3.innerHTML = "jQuery!";
+    $("img").after(txt1, txt2, txt3);      // Insert new elements after img
+}
+</script>
+<style>
+#div32 {
+    height: 100px;
+    width: 300px;
+    padding: 10px;
+    margin: 3px;
+    border: 1px solid blue;
+    background-color: lightblue;
+}
+#div31 {
+    height: 100px;
+    width: 300px;
+    padding: 10px;
+    margin: 3px;
+    border: 1px solid blue;
+    background-color: lightblue;
+}
+.test {
+    color: red;
+    font-size: 20px;
+}
+
+.demo {
+    color: green;
+    font-size: 25px;
+}
+.important {
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.blue {
+    color: blue;
+}
+</style>
+</head>
+<body>
+
+  <div id="div32"></div>
+  <br>
+
+  <button id="bt32">Display dimensions of div</button>
+
+  <p>outerWidth() - returns the width of an element (includes padding and border).</p>
+  <p>outerHeight() - returns the height of an element (includes padding and border).</p>
+
+<button id="30">Display dimensions of document and window</button>
+
+  <div id="div31"></div>
+  <br>
+
+  <button id="bt29">Display dimensions of div</button>
+
+  <p>width() - returns the width of an element.</p>
+  <p>height() - returns the height of an element.</p>
+
+<p>Name: <input type="text" id="test0" value="Mickey Mouse"></p>
+
+<button id="btsv">Show Value</button>
+
+<p id="test">This is some <b>bold</b> text in a paragraph.</p>
+
+<button id="btn1">Show Text</button>
+<button id="btn2">Show HTML</button>
+
+
+<p id="test1">This is a paragraph.</p>
+<p id="test2">This is another paragraph.</p>
+
+<p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+
+<button id="btn4">Set Text</button>
+<button id="btn5">Set HTML</button>
+<button id="btn6">Set Value</button>
+
+<p id="test7">This is a <b>bold</b> paragraph.</p>
+<p id="test8">This is another <b>bold</b> paragraph.</p>
+
+<button id="btn7">Show Old/New Text</button>
+<button id="btn8">Show Old/New HTML</button>
+
+<p><a href="https://www.w3schools.com" id="w3s">W3Schools.com</a></p>
+
+<button>Change href Value</button>
+
+<p>Mouse over the link (or click on it) to see that the value of the href attribute has changed.</p>
+
+<p><a href="https://www.w3schools.com" title="some title" id="w3s2">W3Schools.com</a></p>
+
+<button id="button2">Change href and title</button>
+
+<p>Mouse over the link to see that the href attribute has changed and a title attribute is set.</p>
+
+
+<p><a href="https://www.w3schools.com" id="w3s3">W3Schools.com</a></p>
+
+<button id="button3">Change href Value</button>
+
+<p>Mouse over the link (or click on it) to see that the value of the href attribute has changed.</p>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<ol>
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+</ol>
+
+<button id="btn9">Append text</button>
+<button id="btn10">Append list items</button>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<ol>
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+</ol>
+
+<button id="btn11">Prepend text</button>
+<button id="btn12">Prepend list item</button>
+
+<p>This is a paragraph.</p>
+<button onclick="appendText()">Append text</button>
+
+<img src="/images/w3jquery.gif" alt="jQuery" width="100" height="140"><br><br>
+
+<button id="btn21">Insert before</button>
+<button id="btn22">Insert after</button>
+
+<img src="/images/w3jquery.gif" alt="jQuery" width="100" height="140">
+
+<p>Click the button to insert text after the image.</p>
+
+<button onclick="afterText()">Insert after</button>
+
+<div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+
+This is some text in the div.
+<p>This is a paragraph in the div.</p>
+<p>This is another paragraph in the div.</p>
+
+</div>
+<br>
+
+<button id="bt17">Remove div element</button>
+
+<div id="div2" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+
+This is some text in the div.
+<p>This is a paragraph in the div.</p>
+<p>This is another paragraph in the div.</p>
+
+</div>
+<br>
+
+<button id="bt16">Empty the div element</button>
+
+<p>This is a paragraph.</p>
+<p class="test">This is p element with class="test".</p>
+<p class="test">This is p element with class="test".</p>
+<p class="demo">This is p element with class="demo".</p>
+
+<button id="bt15">Remove all p elements with class="test" and class="demo"</button>
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<div>This is some important text!</div><br>
+
+<button id="bt23">Add classes to elements</button>
+
+
+<div id="div11">This is some text.</div>
+<div id="div21">This is some text.</div>
+<br>
+<button id="bt24">Add classes to first div element</button>
+
+<h1 class="blue">Heading 1</h1>
+<h2 class="blue">Heading 2</h2>
+
+<p class="blue">This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<button id="bt25">Remove class from elements</button>
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<button id="bt26">Toggle class</button>
+
+<h2>This is a heading</h2>
+
+<p style="background-color:#ff0000">This is a paragraph.</p>
+<p style="background-color:#00ff00">This is a paragraph.</p>
+<p style="background-color:#0000ff">This is a paragraph.</p>
+
+<p>This is a paragraph.</p>
+
+<button id="bt27">Set background-color of p</button>
+
+<h2>This is a heading</h2>
+
+<p style="background-color:#ff0000">This is a paragraph.</p>
+<p style="background-color:#00ff00">This is a paragraph.</p>
+<p style="background-color:#0000ff">This is a paragraph.</p>
+
+<p>This is a paragraph.</p>
+
+<button id="bt28">Set multiple styles for p</button>
+
+</body>
+</html>

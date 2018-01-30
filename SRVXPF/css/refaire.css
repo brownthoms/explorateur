@@ -1,0 +1,51 @@
+.div1{
+    background-image:linear-gradient(to right, orange , yellow);
+    font-size: 15px;
+    border-style: solid;
+    border-color: black;
+    border-top-left-radius: 10px;
+
+
+
+}
+@media (min-width: 700px) {
+  .div1{
+  font-size: 30px;
+   }
+   .div2{
+     font-size: 30px;
+   }
+}
+
+.div2{
+  background-image:linear-gradient(to right, pink, purple);
+  border-style: solid;
+  border-color: black;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+a:hover{
+  cursor: pointer;
+
+}
+.back1{
+  background-image:linear-gradient(to right, black, red);
+  border-style: solid;
+  border-color: black;
+  color: white;
+
+  border-bottom-left-radius: 10px;
+}
+
+.images{
+  height: 20px;
+  width: 20px;
+}
+@media (min-width: 700px) {
+  .images{
+  height: 50px;
+  width: 50px;
+   }
+
+}

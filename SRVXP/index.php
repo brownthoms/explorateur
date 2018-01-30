@@ -21,6 +21,7 @@
         });
     </script>
 <?php
-include 'exploServeur3.1.php';
+//include 'php/index.php';
 
 ?>
+<a href="php">LET'S GO</a>

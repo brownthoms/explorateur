@@ -1,20 +1,22 @@
 <?php
-
+// appel des fonctions utilisées
 include 'functionsSRV.php';
 
+// vérification en cas de bug
 if ($_POST['url']==null) {
   $url='/home/';
 }
 
 $url=$_POST['url'];
 
-$test_dir_cmd='ls \*.\* '.$url;
 
+//////*  Test si url valide *//////////
+$test_dir_cmd='ls \*.\* '.$url;
 
 if (shell_exec($test_dir_cmd)==null) {
 
-  $mess_error = "Folder no exists or empty";
-  $url='/home/';
+  $mess_error = "Folder is empty";
+  $url=$_POST['urlbak'];
 
 }
 else {
