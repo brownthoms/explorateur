@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 $tab=[
   "easy" => "wwwwwii",
   "whaa" => "2",
@@ -18,6 +19,8 @@ $products = array(
     array('cheese_cake', 'Cheese Cake', 20),
     array('banana_bread', 'Banana Bread', 14)
 );
+=======
+>>>>>>> b1c6374ad95829fdb64140ed0ddccfb7cbedf68d
 
 if ($_POST['url']==null) {
   $url='/';
