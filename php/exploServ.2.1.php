@@ -33,6 +33,8 @@ else {
 }
 
 
+
+
 // lecture du fichier contenant la liste des dossiers courants
 
 $dir_lght=strlen($dirData);
