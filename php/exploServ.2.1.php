@@ -1,5 +1,5 @@
-
 <?php
+
 if ($_POST['url']==null) {
   $url='/';
 }
@@ -31,6 +31,8 @@ else {
   $urlback = dirname($url);//.'/';
   // ajouter .'/' pour eviter le pb sur home
 }
+
+
 
 
 // lecture du fichier contenant la liste des dossiers courants

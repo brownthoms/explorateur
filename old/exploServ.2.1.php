@@ -1,5 +1,5 @@
-
 <?php
+
 if ($_POST['url']==null) {
   $url='/';
 }
