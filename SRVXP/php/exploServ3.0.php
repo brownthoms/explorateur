@@ -1,20 +1,27 @@
 <?php
-
+// appel des fonctions utilisées
 include 'functionsSRV.php';
 
+// vérification en cas de bug
 if ($_POST['url']==null) {
   $url='/home/';
 }
 
 $url=$_POST['url'];
+<<<<<<< HEAD:php/exploServ3.0.php
 // Test si le repertoire existe
 $test_dir_cmd='ls \*.\* '.$url;
+=======
 
+>>>>>>> aabff67e5e3db362ea1942cfcc3fc06de34aef78:SRVXP/php/exploServ3.0.php
+
+//////*  Test si url valide *//////////
+$test_dir_cmd='ls \*.\* '.$url;
 
 if (shell_exec($test_dir_cmd)==null) {
 
-  $mess_error = "Folder no exists or empty";
-  $url='/home/';
+  $mess_error = "Folder is empty";
+  $url=$_POST['urlbak'];
 
 }
 else {

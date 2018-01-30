@@ -21,6 +21,6 @@
         });
     </script>
 <?php
-include 'exploServeur3.1.php';
+include 'exploServeur3.2.php';
 
 ?>
