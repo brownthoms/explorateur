@@ -1,7 +1,7 @@
 <?php
 $tab=[
   "easy" => "wwwwwii",
-"whaa" => "2",
+  "whaa" => "2",
 ];
 
 $tab2=['easy','den','deh'];
@@ -58,7 +58,9 @@ $dir_current='';
 for ($i=0; $i < $dir_lght; $i++) {
   if (ctype_space($dirData[$i])) {  //et i>1
     array_push($tabDir,$dir_current);
+
     $dir_current='';
+
   }
   else {
     $dir_current=$dir_current.$dirData[$i];
