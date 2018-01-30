@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>3.4 infoserveur</title>
+    <title>3.7 infoserveur</title>
     <style type="text/css">
       #div2 {
         margin: 20px 20px 20px 20px;
@@ -58,6 +58,21 @@ document.onmousedown = rtclickcheck;
 			  crossorigin="anonymous"></script>
 
     <script type="text/javascript">
+        function rename(id){
+          var id_renam ="#"+id;
+          var urlfil = $(id_renam).attr('name');
+          alert(urlfil);
+          $.ajax({
+            type: 'post',
+            url: 'rename1.0.php',  //page de traitement a appeller
+            data: {},
+            //data: passage des variables préparées à la page php de traitement
+            success: function(response,status){}
+
+        });
+
+      }
+
         function go(id){
 // préparation des variables pour l'ajax
           if (id==null) {
@@ -90,7 +105,7 @@ document.onmousedown = rtclickcheck;
 // lancement du nettoyage de page AJAX
               $.ajax({
                 type: 'post',
-                url: 'exploServ3.4.php',  //page de traitement a appeller
+                url: 'exploServ3.7.php',  //page de traitement a appeller
                 data: {url:urlclt,urlbak:urlcur},
                 //data: passage des variables préparées à la page php de traitement
                 success: function(response,status){
@@ -127,8 +142,21 @@ document.onmousedown = rtclickcheck;
                   }
 
                   //affichage des fichiers
-                  console.log(a[1]);
-                  $("#div2").append("<pre>"+a[1]+"</pre>");
+                  //console.log(a[1]);
+                  console.log(a[6]);
+                  console.log(a[7]);
+                  //$("#div2").append("<pre>"+a[1]+"</pre>");
+                  var tabFil=a[7];
+                  var tabShortFil=a[6];
+                  for (var vtabf in tabFil) {
+
+                    $linkurlfil=tabFil[vtabf];
+                    $linkfil = "<a id=\"fil"+vtabf+"\" ondblclick=\"rename(this.id)\" name=\""+$linkurlfil+"\"><div id=\"fil\" >"+tabShortFil[vtabf]+"</div></a>"
+
+                      $("#div2").append($linkfil);
+                      $("#div2").append('<br>');
+
+                  }
 
                   //affichage du lien de retour
                   $link2 = "<a id=\"btbk\" onclick=\"go(this.id)\" name=\""+a[5]+"\">BACK .."+a[5]+"</a>"
