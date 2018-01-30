@@ -1,62 +1,91 @@
 <?php
-  $tab=[
-    "easy" => "wwwwwii",
-    "whaa" => "2",
-  ];
 
-  $tab2=['easy','den','deh'];
-  /*$php_array = array('easy','den','deh');*/
-  $php_array = $tab2;
-  $js_array = json_encode($php_array);
-  $products = array(
-      // product abbreviation, product name, unit price
-      array('choc_cake', 'Chocolate Cake', 15),
-      array('carrot_cake', 'Carrot Cake', 12),
-      array('cheese_cake', 'Cheese Cake', 20),
-      array('banana_bread', 'Banana Bread', 14)
-  );
-  if ($_POST['url']==null) {
-    $url='/';
+include 'functionsSRV.php';
+
+if ($_POST['url']==null) {
+  $url='/home/';
+}
+
+$url=$_POST['url'];
+// Test si le repertoire existe
+$test_dir_cmd='ls \*.\* '.$url;
+
+
+if (shell_exec($test_dir_cmd)==null) {
+
+  $mess_error = "Folder no exists or empty";
+  $url='/home/';
+
+}
+else {
+  $mess_error = '';
+}
+
+
+/////* listage des dossiers */////
+
+$urldir=$url.'*/';
+
+$cmddir='ls -d '.$urldir;
+
+$dirData=shell_exec($cmddir);
+
+
+/////* listage des fichiers *//////
+
+$cmdls='ls \*.\* '.$url;
+
+$lsData=shell_exec($cmdls);
+
+
+////* test if url directory exists *////
+
+
+
+/* préparation de l'url pour remonter dans l'arborescence */
+
+if ($url=='/') {
+  //$urlback = dirname($url);
+  $urlback = '/';
+}
+else {
+  $urlback = dirname($url).'/';
+}
+
+
+
+// lecture du fichier contenant la liste des dossiers courants
+
+$dir_lght=strlen($dirData);
+$tabDir=[];
+$tabShortDir=[];
+$dir_current='';
+
+for ($i=0; $i < $dir_lght; $i++) {
+  if (ctype_space($dirData[$i])) {
+    array_push($tabDir,$dir_current);
+    //ajout du répertoire trouvé dans le tabkleau des répertoires
+    $dir_short=basename($dir_current);
+    $dir_short=ucfirst($dir_short);
+    $dir_current='';
+    //vidage du répertoire copié
+    array_push($tabShortDir,$dir_short);
+    // ajout de la liste des noms de répertoires
+  }
+  else {
+    $dir_current=$dir_current.$dirData[$i];
+    //remplissage de l'adresse de chaque répertoire
+
   }
 
-  $url=$_POST['url'];
-  //$url='/home/';
-  $urldir=$url.'*/';
-  $cmddir='ls -d '.$urldir;
-  $cmdls='ls \*.\* '.$url;
-
-  $lsData=shell_exec($cmdls);
-
-  $dirData=shell_exec($cmddir); //free');
+}
 
 
 
-  $back = $tabData;
-  // transformer le chemin en tableau
-  $back = explode('/', $back);
-  // retirer le dernier élément (= dernier dossier)
-  if(count($back) > 1) array_pop($back);
-  // retransformer le chemin en chaine
-  $back = implode('/', $back);
+//remplissage de la table passer à la page client
+$tabData=[$mess_error,$lsData,$url,$tabShortDir,$tabDir,$urlback];
 
-  //$hddData=shell_exec('df -h');
-  //$dateData=shell_exec('date');
 
-  // lecture du fichier contenant la liste des dossiers courants
-  $dir_lght=strlen($dirData);
-  $tabDir=[];
-  $dir_current='';
-
-  for ($i=0; $i < $dir_lght; $i++) {
-    if (ctype_space($dirData[$i])) {  //et i>1
-      array_push($tabDir,$dir_current);
-      $dir_current='';
-    }
-    else {
-      $dir_current=$dir_current.$dirData[$i];
-    }
-  }
-  //remplissage de la table
-  $tabData=[$back,$lsData,$hddData,$backurl,$tabDir];
-  echo json_encode($tabData) ;
+echo json_encode($tabData) ;
+//passage de la table en retour ajax à la page client
 ?>

@@ -8,7 +8,12 @@ if ($_POST['url']==null) {
 }
 
 $url=$_POST['url'];
+<<<<<<< HEAD:php/exploServ3.0.php
+// Test si le repertoire existe
+$test_dir_cmd='ls \*.\* '.$url;
+=======
 
+>>>>>>> aabff67e5e3db362ea1942cfcc3fc06de34aef78:SRVXP/php/exploServ3.0.php
 
 //////*  Test si url valide *//////////
 $test_dir_cmd='ls \*.\* '.$url;
