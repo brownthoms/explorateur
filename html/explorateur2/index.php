@@ -12,15 +12,12 @@
     <script type="text/javascript" src="js/script.js"></script>
   </head>
   <body onload="go()">
-<div class="container">
+<div class="container-fluid">
   <div class="row">
+
     <div class="col-6" id="div1"></div>
     <div class="col-6" id="div2"></div>
-  </div>
-  <div class="row">
-    <div class="col-12"id="button"></div>
-  </div>
-
+    <div class="col-3" id="back"></div>
     <!-- <div class="col-3" id="div4"></div> -->
 
     <!--<a id="tp1" value="/home/" onClick="go(this.id)">/home/</a>-->

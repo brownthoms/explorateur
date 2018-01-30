@@ -12,12 +12,9 @@
     <script type="text/javascript">
         function go(id){
 
-          //alert(id);
-
           if (id==null) {
             id="\/home\/";
-          //url="\/home\/";
-            //alert(id);
+
 
           }
 
@@ -28,14 +25,10 @@
                 data: {url:id},
                 //data: {url:url},
                 success: function(response,status){
-                  //alert(response);
                   var a = JSON.parse(response);
-
-                  //alert(a[0]);
-                  //console.log(a[4]);
                   $("#div1").empty();
                   $("#div2").empty();
-                  $("#div3").empty();
+                  //$("#div3").empty();
 
                   var tabDir=a[4];
                   var tabShortDir=a[3];
@@ -52,39 +45,27 @@
 
                   $("#div2").empty();
                   $("#div3").empty();
-                  //$("#divdate").empty();
                   console.log(a[0]);
                   console.log(a[2]);
                   $("#div2").append("<pre>"+a[1]+"</pre>");
 
                   $link2 = "<p><a id=\""+a[0]+"\" onclick=\"go(this.id)\" value=\""+a[0]+"\">BACK .."+a[0]+"</a></p>"
-                  //$("#div1").append('<br>');
-                  //alert($link2);
-                  $("#div1").append($link2);
 
-                  //$("#div3").append("<pre>"+a[2]+"</pre>");
-                  //$("#divdate").append(a[3]);
+                  $("#div1").append($link2);
                 }
               });
-          //  },1000);
-        //  });
-      //  });
     }
     </script>
   </head>
   <body onload="go()">
-<div class="container-fluid">
-  <div class="row">
+  <div class="container-fluid">
+    <div class="row">
 
-    <div class="col-3" id="div1"></div>
-    <div class="col-3" id="div2"></div>
-    <div class="col-3" id="div3"></div>
-    <div class="col-3" id="div4"></div>
+      <div class="col-3" id="div1"></div>
+      <div class="col-3" id="div2"></div>
+      <div class="col-3" id="div3"></div>
 
-
-
+    </div>
   </div>
-
-</div>
   </body>
 </html>

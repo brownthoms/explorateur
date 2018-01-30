@@ -1,4 +1,26 @@
 <?php
+<<<<<<< HEAD
+$tab=[
+  "easy" => "wwwwwii",
+  "whaa" => "2",
+];
+
+$tab2=['easy','den','deh'];
+
+/*$php_array = array('easy','den','deh');*/
+$php_array = $tab2;
+$js_array = json_encode($php_array);
+
+
+$products = array(
+    // product abbreviation, product name, unit price
+    array('choc_cake', 'Chocolate Cake', 15),
+    array('carrot_cake', 'Carrot Cake', 12),
+    array('cheese_cake', 'Cheese Cake', 20),
+    array('banana_bread', 'Banana Bread', 14)
+);
+=======
+>>>>>>> b1c6374ad95829fdb64140ed0ddccfb7cbedf68d
 
 if ($_POST['url']==null) {
   $url='/';
