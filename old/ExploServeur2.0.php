@@ -81,7 +81,7 @@
 
     <div class="col-6 div1 " id="div1"></div>
     <div class="col-6 div2" id="div2"></div>
-    <div id="back1" class="back1 col-6"><div>
+    <div id="back1" class="back1 col-12"><div>
     <!-- <div class="col-3" id="div3"></div>
     <div class="col-3" id="div4"></div> -->
 
