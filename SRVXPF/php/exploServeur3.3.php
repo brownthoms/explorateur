@@ -127,6 +127,7 @@ document.onmousedown = rtclickcheck;
                   }
 
                   //affichage des fichiers
+                  console.log(a[1]);
                   $("#div2").append("<pre>"+a[1]+"</pre>");
 
                   //affichage du lien de retour

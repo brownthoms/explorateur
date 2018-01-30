@@ -5,7 +5,7 @@
 			  crossorigin="anonymous">
 
     </script>
-
+<!--
     <script type="text/javascript">
         $(document).keydown(function(event){
             if(event.keyCode==123){
@@ -19,7 +19,7 @@
         $(document).on("contextmenu",function(e){
            e.preventDefault();
         });
-    </script>
+    </script>-->
 <?php
 include 'exploServeur3.3.php';
 
