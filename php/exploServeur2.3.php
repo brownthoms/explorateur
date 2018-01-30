@@ -14,7 +14,7 @@
       }
 
       #rep {
-        
+
         color: grey;
        /* border: 2px solid white;*/
         height: 21px;
@@ -64,13 +64,13 @@ document.onmousedown = rtclickcheck;
 
 
           if (id==null) {
-              var urlclt = "\/home\/";  
+              var urlclt = "\/home\/";
 
           }
           else
           {
-             var id_clk ="#"+id; 
-             //alert(id_clk); 
+             var id_clk ="#"+id;
+             //alert(id_clk);
              if(id=="search"){
               //var urlclt=$(id_clk).attr('value');
               var urlclt=document.getElementById("search").value;
@@ -80,7 +80,7 @@ document.onmousedown = rtclickcheck;
              var urlclt = $(id_clk).attr('name');
 
               }
-             
+
           }
 
 
@@ -90,11 +90,11 @@ document.onmousedown = rtclickcheck;
                 data: {url:urlclt},
                 //data: {url:url},
                 success: function(response,status){
-                  //alert(response);
+
                   var a = JSON.parse(response);
 
-                  //alert(a[0]);
-                  //console.log(a[4]);
+                  
+
                   $("#div00").empty();
                   $("#div1").empty();
                   $("#div2").empty();

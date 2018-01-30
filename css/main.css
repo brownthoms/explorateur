@@ -1,0 +1,26 @@
+.txtrgt{
+  text-align: right;
+}
+.txtctr{
+  text-align: center;
+
+}
+.txtlft{
+  text-align: left;
+}
+.floatrgt{
+  float: right;
+}
+.padtop20{
+  padding-top: 20px;
+}
+
+.linehgt40px{
+  line-height: 40px;
+}
+
+.test{
+  color:inherit;
+  text-align: right;
+  display: run-in;
+}
