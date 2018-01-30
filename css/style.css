@@ -7,18 +7,18 @@
 
 @media (min-width: 700px) {
   .div1 {
-    font-size: 30px; }
-
-  .div2 {
     font-size: 30px; } }
 .div2 {
-  background-image: linear-gradient(to right, pink, purple);
+  background-image: linear-gradient(to right, lightblue, blue);
   border-style: solid;
   border-color: black;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   font-size: 15px; }
 
+@media (min-width: 700px) {
+  .div2 {
+    font-size: 30px; } }
 a:hover {
   cursor: pointer; }
 

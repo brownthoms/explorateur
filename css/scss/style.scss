@@ -1,8 +1,8 @@
 //sass --watch style.scss:../style.css   commande terminal//
 $div1gauche: orange;
 $div1droite: yellow;
-$div2gauche: pink;
-$div2droite: purple;
+$div2gauche: lightblue;
+$div2droite: blue;
 $div3gauche: black;
 $div3droite: red;
 $bordure: black;
@@ -12,6 +12,7 @@ $taillepetit: 15px;
 $tailleimagesgrand: 50px;
 $radius: 10px;
 $tailleimagespetit: 20px;
+
 
 
 
@@ -27,14 +28,11 @@ $tailleimagespetit: 20px;
 
 
 }
+
 @media (min-width: 700px) {
-  .div1{
+.div1{
   font-size: $taillegrand;
-   }
-   .div2{
-     font-size: $taillegrand;
-   }
-}
+}}
 
 .div2{
   background-image:linear-gradient(to right, $div2gauche, $div2droite);
@@ -44,6 +42,10 @@ $tailleimagespetit: 20px;
   border-bottom-right-radius: $radius;
   font-size: $taillepetit;
 }
+@media (min-width: 700px) {
+.div2{
+  font-size: $taillegrand;
+}}
 
 a:hover{
   cursor: pointer;
