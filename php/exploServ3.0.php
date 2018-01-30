@@ -7,7 +7,7 @@ if ($_POST['url']==null) {
 }
 
 $url=$_POST['url'];
-
+// Test si le repertoire existe
 $test_dir_cmd='ls \*.\* '.$url;
 
 
