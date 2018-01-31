@@ -1,0 +1,80 @@
+//sass --watch style.scss:../style.css   commande terminal//
+$div1: black;
+$textediv1: white;
+$textediv2: black;
+$div2: white;
+$div3: red;
+$bordure: red;
+$bordure3: black;
+$textediv3: white;
+$taillegrand: 30px;
+$taillepetit: 15px;
+$tailleimagesgrand: 50px;
+$radius: 10px;
+$tailleimagespetit: 20px;
+$centre:center;
+
+
+
+
+
+
+.div1{
+    background-color:$div1;
+    background-size: cover;
+    color: $textediv1;
+    font-size: $taillepetit;
+    border-style: solid;
+    border-color: $bordure;
+    border-top-left-radius: $radius;
+
+
+
+}
+
+@media (min-width: 700px) {
+.div1{
+  font-size: $taillegrand;
+}}
+
+.div2{
+  background-color:$div2 ;
+  color: $textediv2;
+  background-size: cover;
+  border-style: solid;
+  border-color: $bordure;
+  border-top-right-radius: $radius;
+
+  font-size: $taillepetit;
+}
+@media (min-width: 700px) {
+.div2{
+  font-size: $taillegrand;
+}}
+
+a:hover{
+  cursor: pointer;
+
+}
+.back1{
+  background-color: $div3;
+  background-size: cover;
+  border-style: solid;
+  border-color: $bordure3;
+  color: $textediv3;
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+  text-align: $centre;
+}
+
+.images{
+  height: $tailleimagespetit;
+  width: $tailleimagespetit;
+}
+@media (min-width: 700px) {
+  .images{
+  height: $tailleimagesgrand;
+  width: $tailleimagesgrand;
+   }
+
+}

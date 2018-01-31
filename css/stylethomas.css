@@ -1,0 +1,47 @@
+.div1 {
+  background-color: black;
+  background-size: cover;
+  color: white;
+  font-size: 15px;
+  border-style: solid;
+  border-color: red;
+  border-top-left-radius: 10px; }
+
+@media (min-width: 700px) {
+  .div1 {
+    font-size: 30px; } }
+.div2 {
+  background-color: white;
+  color: black;
+  background-size: cover;
+  border-style: solid;
+  border-color: red;
+  border-top-right-radius: 10px;
+  font-size: 15px; }
+
+@media (min-width: 700px) {
+  .div2 {
+    font-size: 30px; } }
+a:hover {
+  cursor: pointer; }
+
+.back1 {
+  background-color: red;
+  background-size: cover;
+  border-style: solid;
+  border-color: black;
+  color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  text-align: center; }
+
+.images {
+  height: 20px;
+  width: 20px; }
+
+@media (min-width: 700px) {
+  .images {
+    height: 50px;
+    width: 50px; } }
+
+/*# sourceMappingURL=stylethomas.css.map */
