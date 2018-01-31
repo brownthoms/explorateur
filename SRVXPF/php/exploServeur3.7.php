@@ -53,21 +53,24 @@ document.onmousedown = rtclickcheck;
 
 </SCRIPT>
     <script
-			  src="https://code.jquery.com/jquery-3.3.1.min.js"
-			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			  crossorigin="anonymous"></script>
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 
     <script type="text/javascript">
         function rename(id){
           var id_renam ="#"+id;
           var urlfil = $(id_renam).attr('name');
+          var newurlfile = 'MGT HACK';
           alert(urlfil);
           $.ajax({
             type: 'post',
             url: 'rename1.0.php',  //page de traitement a appeller
-            data: {},
+            data: {oriname:urlfil,newname:newurlfile},
             //data: passage des variables préparées à la page php de traitement
-            success: function(response,status){}
+            success: function(response,status){
+               alert(response);
+            }
 
         });
 
