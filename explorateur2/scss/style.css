@@ -1,33 +1,57 @@
 .div1 {
-  background-image: linear-gradient(to right, orange, yellow);
+  background-image: url(../img/bob.jpg);
+  background-size: cover;
   font-size: 15px;
   border-style: solid;
   border-color: black;
-  border-top-left-radius: 10px; }
+  border-bottom-left-radius: 10px; }
 
 @media (min-width: 700px) {
   .div1 {
-    font-size: 30px; }
-
-  .div2 {
     font-size: 30px; } }
 .div2 {
-  background-image: linear-gradient(to right, pink, purple);
+  background-image: url(../img/dory.jpg);
+  background-size: cover;
   border-style: solid;
   border-color: black;
-  border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   font-size: 15px; }
 
-a:hover {
-  cursor: pointer; }
+@media (min-width: 700px) {
+  .div2 {
+    font-size: 30px; } }
+.linkdossier:hover {
+  cursor: pointer;
+  letter-spacing: 3px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5); }
 
-.back1 {
-  background-image: linear-gradient(to right, black, red);
-  border-style: solid;
+.div3 {
+  background-color: red;
+  border-right-style: solid;
+  border-left-style: solid;
   border-color: black;
   color: white;
-  border-bottom-left-radius: 10px; }
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px; }
+
+.div0, .div00 {
+  background-color: red;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-color: black;
+  color: white;
+  text-align: center; }
+
+.div00 {
+  border-top-style: solid; }
+
+.butback {
+  background-color: white;
+  border-radius: 2px;
+  width: 100px;
+  height: 40px; }
 
 .images {
   height: 20px;
